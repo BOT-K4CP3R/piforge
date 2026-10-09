@@ -1,0 +1,13 @@
+{
+  "name": "piforge",
+  "owner": {
+    "name": "BOT-K4CP3R"
+  },
+  "plugins": [
+    {
+      "name": "piforge",
+      "source": "./",
+      "description": "Raspberry Pi device design toolkit for Claude Code: electronics + 3D printing + firmware, with simulation, validation, export and a web GUI."
+    }
+  ]
+}

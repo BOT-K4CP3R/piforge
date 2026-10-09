@@ -1,0 +1,357 @@
+{
+ "flaps": [
+  {
+   "flap": 0,
+   "front_digit": 0,
+   "front_half": "top",
+   "back_digit": 1,
+   "back_half": "bottom",
+   "files": {
+    "front_svg": "flap_00_front.svg",
+    "front_png": "flap_00_front.png",
+    "back_svg": "flap_00_back.svg",
+    "back_png": "flap_00_back.png"
+   }
+  },
+  {
+   "flap": 1,
+   "front_digit": 1,
+   "front_half": "top",
+   "back_digit": 2,
+   "back_half": "bottom",
+   "files": {
+    "front_svg": "flap_01_front.svg",
+    "front_png": "flap_01_front.png",
+    "back_svg": "flap_01_back.svg",
+    "back_png": "flap_01_back.png"
+   }
+  },
+  {
+   "flap": 2,
+   "front_digit": 2,
+   "front_half": "top",
+   "back_digit": 3,
+   "back_half": "bottom",
+   "files": {
+    "front_svg": "flap_02_front.svg",
+    "front_png": "flap_02_front.png",
+    "back_svg": "flap_02_back.svg",
+    "back_png": "flap_02_back.png"
+   }
+  },
+  {
+   "flap": 3,
+   "front_digit": 3,
+   "front_half": "top",
+   "back_digit": 4,
+   "back_half": "bottom",
+   "files": {
+    "front_svg": "flap_03_front.svg",
+    "front_png": "flap_03_front.png",
+    "back_svg": "flap_03_back.svg",
+    "back_png": "flap_03_back.png"
+   }
+  },
+  {
+   "flap": 4,
+   "front_digit": 4,
+   "front_half": "top",
+   "back_digit": 5,
+   "back_half": "bottom",
+   "files": {
+    "front_svg": "flap_04_front.svg",
+    "front_png": "flap_04_front.png",
+    "back_svg": "flap_04_back.svg",
+    "back_png": "flap_04_back.png"
+   }
+  },
+  {
+   "flap": 5,
+   "front_digit": 5,
+   "front_half": "top",
+   "back_digit": 6,
+   "back_half": "bottom",
+   "files": {
+    "front_svg": "flap_05_front.svg",
+    "front_png": "flap_05_front.png",
+    "back_svg": "flap_05_back.svg",
+    "back_png": "flap_05_back.png"
+   }
+  },
+  {
+   "flap": 6,
+   "front_digit": 6,
+   "front_half": "top",
+   "back_digit": 7,
+   "back_half": "bottom",
+   "files": {
+    "front_svg": "flap_06_front.svg",
+    "front_png": "flap_06_front.png",
+    "back_svg": "flap_06_back.svg",
+    "back_png": "flap_06_back.png"
+   }
+  },
+  {
+   "flap": 7,
+   "front_digit": 7,
+   "front_half": "top",
+   "back_digit": 8,
+   "back_half": "bottom",
+   "files": {
+    "front_svg": "flap_07_front.svg",
+    "front_png": "flap_07_front.png",
+    "back_svg": "flap_07_back.svg",
+    "back_png": "flap_07_back.png"
+   }
+  },
+  {
+   "flap": 8,
+   "front_digit": 8,
+   "front_half": "top",
+   "back_digit": 9,
+   "back_half": "bottom",
+   "files": {
+    "front_svg": "flap_08_front.svg",
+    "front_png": "flap_08_front.png",
+    "back_svg": "flap_08_back.svg",
+    "back_png": "flap_08_back.png"
+   }
+  },
+  {
+   "flap": 9,
+   "front_digit": 9,
+   "front_half": "top",
+   "back_digit": 0,
+   "back_half": "bottom",
+   "files": {
+    "front_svg": "flap_09_front.svg",
+    "front_png": "flap_09_front.png",
+    "back_svg": "flap_09_back.svg",
+    "back_png": "flap_09_back.png"
+   }
+  },
+  {
+   "flap": 10,
+   "front_digit": 0,
+   "front_half": "top",
+   "back_digit": 1,
+   "back_half": "bottom",
+   "files": {
+    "front_svg": "flap_10_front.svg",
+    "front_png": "flap_10_front.png",
+    "back_svg": "flap_10_back.svg",
+    "back_png": "flap_10_back.png"
+   }
+  },
+  {
+   "flap": 11,
+   "front_digit": 1,
+   "front_half": "top",
+   "back_digit": 2,
+   "back_half": "bottom",
+   "files": {
+    "front_svg": "flap_11_front.svg",
+    "front_png": "flap_11_front.png",
+    "back_svg": "flap_11_back.svg",
+    "back_png": "flap_11_back.png"
+   }
+  },
+  {
+   "flap": 12,
+   "front_digit": 2,
+   "front_half": "top",
+   "back_digit": 3,
+   "back_half": "bottom",
+   "files": {
+    "front_svg": "flap_12_front.svg",
+    "front_png": "flap_12_front.png",
+    "back_svg": "flap_12_back.svg",
+    "back_png": "flap_12_back.png"
+   }
+  },
+  {
+   "flap": 13,
+   "front_digit": 3,
+   "front_half": "top",
+   "back_digit": 4,
+   "back_half": "bottom",
+   "files": {
+    "front_svg": "flap_13_front.svg",
+    "front_png": "flap_13_front.png",
+    "back_svg": "flap_13_back.svg",
+    "back_png": "flap_13_back.png"
+   }
+  },
+  {
+   "flap": 14,
+   "front_digit": 4,
+   "front_half": "top",
+   "back_digit": 5,
+   "back_half": "bottom",
+   "files": {
+    "front_svg": "flap_14_front.svg",
+    "front_png": "flap_14_front.png",
+    "back_svg": "flap_14_back.svg",
+    "back_png": "flap_14_back.png"
+   }
+  },
+  {
+   "flap": 15,
+   "front_digit": 5,
+   "front_half": "top",
+   "back_digit": 6,
+   "back_half": "bottom",
+   "files": {
+    "front_svg": "flap_15_front.svg",
+    "front_png": "flap_15_front.png",
+    "back_svg": "flap_15_back.svg",
+    "back_png": "flap_15_back.png"
+   }
+  },
+  {
+   "flap": 16,
+   "front_digit": 6,
+   "front_half": "top",
+   "back_digit": 7,
+   "back_half": "bottom",
+   "files": {
+    "front_svg": "flap_16_front.svg",
+    "front_png": "flap_16_front.png",
+    "back_svg": "flap_16_back.svg",
+    "back_png": "flap_16_back.png"
+   }
+  },
+  {
+   "flap": 17,
+   "front_digit": 7,
+   "front_half": "top",
+   "back_digit": 8,
+   "back_half": "bottom",
+   "files": {
+    "front_svg": "flap_17_front.svg",
+    "front_png": "flap_17_front.png",
+    "back_svg": "flap_17_back.svg",
+    "back_png": "flap_17_back.png"
+   }
+  },
+  {
+   "flap": 18,
+   "front_digit": 8,
+   "front_half": "top",
+   "back_digit": 9,
+   "back_half": "bottom",
+   "files": {
+    "front_svg": "flap_18_front.svg",
+    "front_png": "flap_18_front.png",
+    "back_svg": "flap_18_back.svg",
+    "back_png": "flap_18_back.png"
+   }
+  },
+  {
+   "flap": 19,
+   "front_digit": 9,
+   "front_half": "top",
+   "back_digit": 0,
+   "back_half": "bottom",
+   "files": {
+    "front_svg": "flap_19_front.svg",
+    "front_png": "flap_19_front.png",
+    "back_svg": "flap_19_back.svg",
+    "back_png": "flap_19_back.png"
+   }
+  }
+ ],
+ "size_mm": [
+  40.0,
+  32.990082510563234
+ ],
+ "digit_height_mm": 50.0,
+ "font": "Arial",
+ "bold": true,
+ "dpi": 300,
+ "orientation": "Per-flap files are drawn as seen on the display. Front: pin edge (side tabs) at the bottom. Back: pin edge at the top \u2014 flip the flap over its pin axis and apply upright. sheet_back.svg is the duplex back of sheet_front.svg (flip on the long edge).",
+ "files": [
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_00_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_00_front.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_00_back.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_00_back.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_01_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_01_front.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_01_back.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_01_back.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_02_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_02_front.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_02_back.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_02_back.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_03_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_03_front.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_03_back.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_03_back.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_04_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_04_front.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_04_back.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_04_back.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_05_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_05_front.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_05_back.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_05_back.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_06_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_06_front.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_06_back.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_06_back.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_07_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_07_front.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_07_back.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_07_back.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_08_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_08_front.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_08_back.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_08_back.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_09_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_09_front.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_09_back.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_09_back.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_10_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_10_front.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_10_back.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_10_back.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_11_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_11_front.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_11_back.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_11_back.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_12_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_12_front.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_12_back.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_12_back.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_13_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_13_front.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_13_back.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_13_back.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_14_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_14_front.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_14_back.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_14_back.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_15_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_15_front.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_15_back.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_15_back.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_16_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_16_front.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_16_back.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_16_back.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_17_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_17_front.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_17_back.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_17_back.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_18_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_18_front.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_18_back.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_18_back.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_19_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_19_front.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_19_back.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/flap_19_back.png",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/sheet_front.svg",
+  "/Users/kacper/Library/Mobile Documents/com~apple~CloudDocs/Programowanie.nosync/money-counter/projects/money_counter/artwork/sheet_back.svg"
+ ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "piforge",
+  "version": "0.1.0",
+  "description": "Design, simulate, validate and export Raspberry Pi devices: electronics (ERC, power, wiring, KiCad netlist), 3D-printed mechanics (enclosures, split-flap modules, gears, harnesses), SPICE benches and a digital twin that runs real firmware — with a web GUI.",
+  "author": {
+    "name": "BOT-K4CP3R"
+  },
+  "homepage": "https://github.com/BOT-K4CP3R/piforge",
+  "repository": "https://github.com/BOT-K4CP3R/piforge",
+  "keywords": ["raspberry-pi", "3d-printing", "electronics", "cad", "build123d", "spice", "digital-twin", "split-flap"]
+}

@@ -1,0 +1,3002 @@
+[
+ {
+  "name": "spool",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 8,
+  "files": {
+   "stl": "parts/spool.stl",
+   "3mf": "parts/spool.3mf",
+   "step": "parts/spool.step"
+  },
+  "print_rotation": [
+   0.0,
+   90.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "spool",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     0.0,
+     0.0,
+     1.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     -1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 13865.995512655974,
+   "area_mm2": 7158.747041915843,
+   "size_mm": [
+    49.05000000000001,
+    49.00060991385149,
+    47.400000000000006
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 3,
+   "bridge_area_mm2": 58.54458697035363,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 1726.5387023917074,
+   "min_wall_mm": 1.2000000000000033,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 8.993567051917855,
+    "filament_m": 3.015395712634378,
+    "cost": 0.7194853641534283,
+    "time_h": 0.41148443884153024,
+    "shell_volume_mm3": 6085.855679851844,
+    "infill_volume_mm3": 1167.0209749206194
+   },
+   "report": {
+    "title": "print:spool",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 2
+    },
+    "findings": [
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "3 bridges (58.5 mm², longest span 6.0 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:spool",
+      "data": {
+       "count": 3,
+       "max_span_mm": 5.960612457209634,
+       "area_mm2": 58.54458697035363,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:spool"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈9.0 g of PLA (3.02 m), ≈25 min, ≈0.72 PLN on generic at 15 % infill.",
+      "subject": "part:spool",
+      "data": {
+       "mass_g": 8.993567051917855,
+       "filament_m": 3.015395712634378,
+       "time_h": 0.41148443884153024,
+       "cost": 0.7194853641534283,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:spool"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "m0_spool",
+   "m1_spool",
+   "m2_spool",
+   "m3_spool",
+   "m4_spool",
+   "m5_spool",
+   "m6_spool",
+   "m7_spool"
+  ]
+ },
+ {
+  "name": "spool_cap",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 8,
+  "files": {
+   "stl": "parts/spool_cap.stl",
+   "3mf": "parts/spool_cap.3mf",
+   "step": "parts/spool_cap.step"
+  },
+  "print_rotation": [
+   0.0,
+   -90.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "spool_cap",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     0.0,
+     0.0,
+     -1.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 1393.2247086973628,
+   "area_mm2": 2000.3031469122989,
+   "size_mm": [
+    33.92889873769121,
+    33.93944772892772,
+    2.000000000000007
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 0,
+   "bridge_area_mm2": 0.0,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 696.6123543486814,
+   "min_wall_mm": 1.680875312279305,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 1.72759863878473,
+    "filament_m": 0.5792355245112196,
+    "cost": 0.1382078911027784,
+    "time_h": 0.059306508823200724,
+    "shell_volume_mm3": 1393.2247086973628,
+    "infill_volume_mm3": 0.0
+   },
+   "report": {
+    "title": "print:spool_cap",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 1
+    },
+    "findings": [
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈1.7 g of PLA (0.58 m), ≈4 min, ≈0.14 PLN on generic at 15 % infill.",
+      "subject": "part:spool_cap",
+      "data": {
+       "mass_g": 1.72759863878473,
+       "filament_m": 0.5792355245112196,
+       "time_h": 0.059306508823200724,
+       "cost": 0.1382078911027784,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:spool_cap"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "m0_spool_cap",
+   "m1_spool_cap",
+   "m2_spool_cap",
+   "m3_spool_cap",
+   "m4_spool_cap",
+   "m5_spool_cap",
+   "m6_spool_cap",
+   "m7_spool_cap"
+  ]
+ },
+ {
+  "name": "flap",
+  "material": "PLA",
+  "color": "#1c1c1c",
+  "quantity": 160,
+  "files": {
+   "stl": "parts/flap.stl",
+   "3mf": "parts/flap.3mf",
+   "step": "parts/flap.step"
+  },
+  "print_rotation": [
+   90.0,
+   0.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "flap",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 1592.3559605070352,
+   "area_mm2": 2840.142798870411,
+   "size_mm": [
+    44.6,
+    32.990082510563234,
+    1.2
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 0,
+   "bridge_area_mm2": 0.0,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 1326.9633004225293,
+   "min_wall_mm": 1.2,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 1.9745213910287236,
+    "filament_m": 0.6620246785999349,
+    "cost": 0.15796171128229788,
+    "time_h": 0.06476681946400599,
+    "shell_volume_mm3": 1592.3559605070352,
+    "infill_volume_mm3": 0.0
+   },
+   "report": {
+    "title": "print:flap",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 1
+    },
+    "findings": [
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈2.0 g of PLA (0.66 m), ≈4 min, ≈0.16 PLN on generic at 15 % infill.",
+      "subject": "part:flap",
+      "data": {
+       "mass_g": 1.9745213910287236,
+       "filament_m": 0.6620246785999349,
+       "time_h": 0.06476681946400599,
+       "cost": 0.15796171128229788,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:flap"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "m0_flap_00",
+   "m0_flap_01",
+   "m0_flap_02",
+   "m0_flap_03",
+   "m0_flap_04",
+   "m0_flap_05",
+   "m0_flap_06",
+   "m0_flap_07",
+   "m0_flap_08",
+   "m0_flap_09",
+   "m0_flap_10",
+   "m0_flap_11",
+   "m0_flap_12",
+   "m0_flap_13",
+   "m0_flap_14",
+   "m0_flap_15",
+   "m0_flap_16",
+   "m0_flap_17",
+   "m0_flap_18",
+   "m0_flap_19",
+   "m1_flap_00",
+   "m1_flap_01",
+   "m1_flap_02",
+   "m1_flap_03",
+   "m1_flap_04",
+   "m1_flap_05",
+   "m1_flap_06",
+   "m1_flap_07",
+   "m1_flap_08",
+   "m1_flap_09",
+   "m1_flap_10",
+   "m1_flap_11",
+   "m1_flap_12",
+   "m1_flap_13",
+   "m1_flap_14",
+   "m1_flap_15",
+   "m1_flap_16",
+   "m1_flap_17",
+   "m1_flap_18",
+   "m1_flap_19",
+   "m2_flap_00",
+   "m2_flap_01",
+   "m2_flap_02",
+   "m2_flap_03",
+   "m2_flap_04",
+   "m2_flap_05",
+   "m2_flap_06",
+   "m2_flap_07",
+   "m2_flap_08",
+   "m2_flap_09",
+   "m2_flap_10",
+   "m2_flap_11",
+   "m2_flap_12",
+   "m2_flap_13",
+   "m2_flap_14",
+   "m2_flap_15",
+   "m2_flap_16",
+   "m2_flap_17",
+   "m2_flap_18",
+   "m2_flap_19",
+   "m3_flap_00",
+   "m3_flap_01",
+   "m3_flap_02",
+   "m3_flap_03",
+   "m3_flap_04",
+   "m3_flap_05",
+   "m3_flap_06",
+   "m3_flap_07",
+   "m3_flap_08",
+   "m3_flap_09",
+   "m3_flap_10",
+   "m3_flap_11",
+   "m3_flap_12",
+   "m3_flap_13",
+   "m3_flap_14",
+   "m3_flap_15",
+   "m3_flap_16",
+   "m3_flap_17",
+   "m3_flap_18",
+   "m3_flap_19",
+   "m4_flap_00",
+   "m4_flap_01",
+   "m4_flap_02",
+   "m4_flap_03",
+   "m4_flap_04",
+   "m4_flap_05",
+   "m4_flap_06",
+   "m4_flap_07",
+   "m4_flap_08",
+   "m4_flap_09",
+   "m4_flap_10",
+   "m4_flap_11",
+   "m4_flap_12",
+   "m4_flap_13",
+   "m4_flap_14",
+   "m4_flap_15",
+   "m4_flap_16",
+   "m4_flap_17",
+   "m4_flap_18",
+   "m4_flap_19",
+   "m5_flap_00",
+   "m5_flap_01",
+   "m5_flap_02",
+   "m5_flap_03",
+   "m5_flap_04",
+   "m5_flap_05",
+   "m5_flap_06",
+   "m5_flap_07",
+   "m5_flap_08",
+   "m5_flap_09",
+   "m5_flap_10",
+   "m5_flap_11",
+   "m5_flap_12",
+   "m5_flap_13",
+   "m5_flap_14",
+   "m5_flap_15",
+   "m5_flap_16",
+   "m5_flap_17",
+   "m5_flap_18",
+   "m5_flap_19",
+   "m6_flap_00",
+   "m6_flap_01",
+   "m6_flap_02",
+   "m6_flap_03",
+   "m6_flap_04",
+   "m6_flap_05",
+   "m6_flap_06",
+   "m6_flap_07",
+   "m6_flap_08",
+   "m6_flap_09",
+   "m6_flap_10",
+   "m6_flap_11",
+   "m6_flap_12",
+   "m6_flap_13",
+   "m6_flap_14",
+   "m6_flap_15",
+   "m6_flap_16",
+   "m6_flap_17",
+   "m6_flap_18",
+   "m6_flap_19",
+   "m7_flap_00",
+   "m7_flap_01",
+   "m7_flap_02",
+   "m7_flap_03",
+   "m7_flap_04",
+   "m7_flap_05",
+   "m7_flap_06",
+   "m7_flap_07",
+   "m7_flap_08",
+   "m7_flap_09",
+   "m7_flap_10",
+   "m7_flap_11",
+   "m7_flap_12",
+   "m7_flap_13",
+   "m7_flap_14",
+   "m7_flap_15",
+   "m7_flap_16",
+   "m7_flap_17",
+   "m7_flap_18",
+   "m7_flap_19"
+  ]
+ },
+ {
+  "name": "frame_left",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 8,
+  "files": {
+   "stl": "parts/frame_left.stl",
+   "3mf": "parts/frame_left.3mf",
+   "step": "parts/frame_left.step"
+  },
+  "print_rotation": [
+   0.0,
+   -90.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "frame_left",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     0.0,
+     0.0,
+     -1.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 20688.959819156404,
+   "area_mm2": 14339.366301294242,
+   "size_mm": [
+    100.0,
+    62.5,
+    8.100000000000001
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 6.907612075632486,
+   "bridge_count": 4,
+   "bridge_area_mm2": 65.51743211242018,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 6236.184775848735,
+   "min_wall_mm": 1.425151669064793,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 16.098171339390365,
+    "filament_m": 5.397453152662024,
+    "cost": 1.2878537071512293,
+    "time_h": 0.5236418303026174,
+    "shell_volume_mm3": 11622.414433612214,
+    "infill_volume_mm3": 1359.9818078316284
+   },
+   "report": {
+    "title": "print:frame_left",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 3
+    },
+    "findings": [
+     {
+      "code": "PRINT.OVERHANG",
+      "severity": "info",
+      "message": "6.9 mm² leans more than 46° from vertical (printer limit 45° + 1° tolerance) — small — usually prints without supports.",
+      "subject": "part:frame_left",
+      "data": {
+       "area_mm2": 6.907612075632486,
+       "faces": 32,
+       "max_overhang_deg": 45.0,
+       "limit_deg": 46.0
+      },
+      "hint": "Reorient (best_orientation), turn flat ceilings into 45° chamfers, or enable supports.",
+      "source": "print:frame_left"
+     },
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "4 bridges (65.5 mm², longest span 1.9 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:frame_left",
+      "data": {
+       "count": 4,
+       "max_span_mm": 1.8970471505382491,
+       "area_mm2": 65.51743211242018,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:frame_left"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈16.1 g of PLA (5.40 m), ≈31 min, ≈1.29 PLN on generic at 15 % infill.",
+      "subject": "part:frame_left",
+      "data": {
+       "mass_g": 16.098171339390365,
+       "filament_m": 5.397453152662024,
+       "time_h": 0.5236418303026174,
+       "cost": 1.2878537071512293,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:frame_left"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "m0_frame_left",
+   "m1_frame_left",
+   "m2_frame_left",
+   "m3_frame_left",
+   "m4_frame_left",
+   "m5_frame_left",
+   "m6_frame_left",
+   "m7_frame_left"
+  ]
+ },
+ {
+  "name": "frame_right",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 8,
+  "files": {
+   "stl": "parts/frame_right.stl",
+   "3mf": "parts/frame_right.3mf",
+   "step": "parts/frame_right.step"
+  },
+  "print_rotation": [
+   0.0,
+   90.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "frame_right",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     0.0,
+     0.0,
+     1.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     -1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 22521.19580160703,
+   "area_mm2": 14829.351063286344,
+   "size_mm": [
+    100.0,
+    62.5,
+    10.599999999999998
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 6.907612075632487,
+   "bridge_count": 4,
+   "bridge_area_mm2": 61.42259260539408,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 6104.612524658058,
+   "min_wall_mm": 1.2800000000000011,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 16.931502207902874,
+    "filament_m": 5.676855342428614,
+    "cost": 1.35452017663223,
+    "time_h": 0.556236005572446,
+    "shell_volume_mm3": 12089.715169643232,
+    "infill_volume_mm3": 1564.7220947945698
+   },
+   "report": {
+    "title": "print:frame_right",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 3
+    },
+    "findings": [
+     {
+      "code": "PRINT.OVERHANG",
+      "severity": "info",
+      "message": "6.9 mm² leans more than 46° from vertical (printer limit 45° + 1° tolerance) — small — usually prints without supports.",
+      "subject": "part:frame_right",
+      "data": {
+       "area_mm2": 6.907612075632487,
+       "faces": 32,
+       "max_overhang_deg": 45.0,
+       "limit_deg": 46.0
+      },
+      "hint": "Reorient (best_orientation), turn flat ceilings into 45° chamfers, or enable supports.",
+      "source": "print:frame_right"
+     },
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "4 bridges (61.4 mm², longest span 1.8 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:frame_right",
+      "data": {
+       "count": 4,
+       "max_span_mm": 1.802457755092945,
+       "area_mm2": 61.42259260539408,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:frame_right"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈16.9 g of PLA (5.68 m), ≈33 min, ≈1.35 PLN on generic at 15 % infill.",
+      "subject": "part:frame_right",
+      "data": {
+       "mass_g": 16.931502207902874,
+       "filament_m": 5.676855342428614,
+       "time_h": 0.556236005572446,
+       "cost": 1.35452017663223,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:frame_right"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "m0_frame_right",
+   "m1_frame_right",
+   "m2_frame_right",
+   "m3_frame_right",
+   "m4_frame_right",
+   "m5_frame_right",
+   "m6_frame_right",
+   "m7_frame_right"
+  ]
+ },
+ {
+  "name": "front_0",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 1,
+  "files": {
+   "stl": "parts/front_0.stl",
+   "3mf": "parts/front_0.3mf",
+   "step": "parts/front_0.step"
+  },
+  "print_rotation": [
+   90.0,
+   0.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "front_0",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 66092.01279910652,
+   "area_mm2": 51102.05508632473,
+   "size_mm": [
+    149.09999999999997,
+    109.5,
+    22.69666837911873
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 10,
+   "bridge_area_mm2": 101.17344027265844,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 11836.890009218569,
+   "min_wall_mm": 1.0000000000000018,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 58.21351452084273,
+    "filament_m": 19.51803784751852,
+    "cost": 4.657081161667419,
+    "time_h": 1.8745363687538183,
+    "shell_volume_mm3": 43567.74206850941,
+    "infill_volume_mm3": 3378.640609589567
+   },
+   "report": {
+    "title": "print:front_0",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 2
+    },
+    "findings": [
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "10 bridges (101.2 mm², longest span 2.2 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:front_0",
+      "data": {
+       "count": 10,
+       "max_span_mm": 2.18890676752267,
+       "area_mm2": 101.17344027265844,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:front_0"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈58.2 g of PLA (19.52 m), ≈112 min, ≈4.66 PLN on generic at 15 % infill.",
+      "subject": "part:front_0",
+      "data": {
+       "mass_g": 58.21351452084273,
+       "filament_m": 19.51803784751852,
+       "time_h": 1.8745363687538183,
+       "cost": 4.657081161667419,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:front_0"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "front_0"
+  ]
+ },
+ {
+  "name": "front_1",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 1,
+  "files": {
+   "stl": "parts/front_1.stl",
+   "3mf": "parts/front_1.3mf",
+   "step": "parts/front_1.step"
+  },
+  "print_rotation": [
+   90.0,
+   0.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "front_1",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 73026.75152211123,
+   "area_mm2": 53416.88281141568,
+   "size_mm": [
+    150.0,
+    109.5,
+    22.69666837911873
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 12,
+   "bridge_area_mm2": 123.09192234480876,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 11935.440009218572,
+   "min_wall_mm": 1.1999999999999929,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 61.66549347095799,
+    "filament_m": 20.675429844063647,
+    "cost": 4.933239477676639,
+    "time_h": 1.9819381431376315,
+    "shell_volume_mm3": 45619.086990365555,
+    "infill_volume_mm3": 4111.14967976185
+   },
+   "report": {
+    "title": "print:front_1",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 2
+    },
+    "findings": [
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "12 bridges (123.1 mm², longest span 2.2 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:front_1",
+      "data": {
+       "count": 12,
+       "max_span_mm": 2.18890676752267,
+       "area_mm2": 123.09192234480876,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:front_1"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈61.7 g of PLA (20.68 m), ≈119 min, ≈4.93 PLN on generic at 15 % infill.",
+      "subject": "part:front_1",
+      "data": {
+       "mass_g": 61.66549347095799,
+       "filament_m": 20.675429844063647,
+       "time_h": 1.9819381431376315,
+       "cost": 4.933239477676639,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:front_1"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "front_1"
+  ]
+ },
+ {
+  "name": "front_2",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 1,
+  "files": {
+   "stl": "parts/front_2.stl",
+   "3mf": "parts/front_2.3mf",
+   "step": "parts/front_2.step"
+  },
+  "print_rotation": [
+   90.0,
+   0.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "front_2",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 80051.06913362643,
+   "area_mm2": 57851.100097257266,
+   "size_mm": [
+    166.96304346389417,
+    109.5,
+    22.69666837911873
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 13,
+   "bridge_area_mm2": 270.1267426983167,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 13645.830974307832,
+   "min_wall_mm": 1.0000000000000007,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 66.78676486880144,
+    "filament_m": 22.39250825434815,
+    "cost": 5.342941189504115,
+    "time_h": 2.1412767842991287,
+    "shell_volume_mm3": 49238.392798811125,
+    "infill_volume_mm3": 4621.901450222295
+   },
+   "report": {
+    "title": "print:front_2",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 2
+    },
+    "findings": [
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "13 bridges (270.1 mm², longest span 8.2 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:front_2",
+      "data": {
+       "count": 13,
+       "max_span_mm": 8.177358920601943,
+       "area_mm2": 270.1267426983167,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:front_2"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈66.8 g of PLA (22.39 m), ≈2 h 08 min, ≈5.34 PLN on generic at 15 % infill.",
+      "subject": "part:front_2",
+      "data": {
+       "mass_g": 66.78676486880144,
+       "filament_m": 22.39250825434815,
+       "time_h": 2.1412767842991287,
+       "cost": 5.342941189504115,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:front_2"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "front_2"
+  ]
+ },
+ {
+  "name": "front_3",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 1,
+  "files": {
+   "stl": "parts/front_3.stl",
+   "3mf": "parts/front_3.3mf",
+   "step": "parts/front_3.step"
+  },
+  "print_rotation": [
+   90.0,
+   0.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "front_3",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 73239.30084868356,
+   "area_mm2": 55429.15291610394,
+   "size_mm": [
+    165.93695653610587,
+    109.5,
+    22.69666837911873
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 10,
+   "bridge_area_mm2": 101.17344027265841,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 13680.536749922163,
+   "min_wall_mm": 1.000000000000002,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 63.258954366452244,
+    "filament_m": 21.20969118050404,
+    "cost": 5.06071634931618,
+    "time_h": 2.0315156550693274,
+    "shell_volume_mm3": 47093.40076716992,
+    "infill_volume_mm3": 3921.8850122270455
+   },
+   "report": {
+    "title": "print:front_3",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 2
+    },
+    "findings": [
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "10 bridges (101.2 mm², longest span 2.2 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:front_3",
+      "data": {
+       "count": 10,
+       "max_span_mm": 2.18890676752267,
+       "area_mm2": 101.17344027265841,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:front_3"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈63.3 g of PLA (21.21 m), ≈2 h 02 min, ≈5.06 PLN on generic at 15 % infill.",
+      "subject": "part:front_3",
+      "data": {
+       "mass_g": 63.258954366452244,
+       "filament_m": 21.20969118050404,
+       "time_h": 2.0315156550693274,
+       "cost": 5.06071634931618,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:front_3"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "front_3"
+  ]
+ },
+ {
+  "name": "side_left",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 1,
+  "files": {
+   "stl": "parts/side_left.stl",
+   "3mf": "parts/side_left.3mf",
+   "step": "parts/side_left.step"
+  },
+  "print_rotation": [
+   0.0,
+   -90.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "side_left",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     0.0,
+     0.0,
+     -1.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 57857.4600197509,
+   "area_mm2": 35443.595221541975,
+   "size_mm": [
+    109.5,
+    136.48666837911873,
+    11.0
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 8,
+   "bridge_area_mm2": 97.21941539262485,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 14945.290187513501,
+   "min_wall_mm": 0.9999999999999968,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 41.179018286711,
+    "filament_m": 13.80665029519759,
+    "cost": 3.29432146293688,
+    "time_h": 1.3117625661685768,
+    "shell_volume_mm3": 28859.137308384565,
+    "infill_volume_mm3": 4349.74840670495
+   },
+   "report": {
+    "title": "print:side_left",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 2
+    },
+    "findings": [
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "8 bridges (97.2 mm², longest span 1.9 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:side_left",
+      "data": {
+       "count": 8,
+       "max_span_mm": 1.897047150538242,
+       "area_mm2": 97.21941539262485,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:side_left"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈41.2 g of PLA (13.81 m), ≈79 min, ≈3.29 PLN on generic at 15 % infill.",
+      "subject": "part:side_left",
+      "data": {
+       "mass_g": 41.179018286711,
+       "filament_m": 13.80665029519759,
+       "time_h": 1.3117625661685768,
+       "cost": 3.29432146293688,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:side_left"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "side_left"
+  ]
+ },
+ {
+  "name": "side_right",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 1,
+  "files": {
+   "stl": "parts/side_right.stl",
+   "3mf": "parts/side_right.3mf",
+   "step": "parts/side_right.step"
+  },
+  "print_rotation": [
+   0.0,
+   90.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "side_right",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     0.0,
+     0.0,
+     1.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     -1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 57857.4600197509,
+   "area_mm2": 35443.59522154198,
+   "size_mm": [
+    109.5,
+    136.48666837911873,
+    11.0
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 8,
+   "bridge_area_mm2": 91.14320193058506,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 14945.290187513501,
+   "min_wall_mm": 0.9999999999999967,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 41.179018286711,
+    "filament_m": 13.80665029519759,
+    "cost": 3.29432146293688,
+    "time_h": 1.3117625661685768,
+    "shell_volume_mm3": 28859.13730838456,
+    "infill_volume_mm3": 4349.748406704951
+   },
+   "report": {
+    "title": "print:side_right",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 2
+    },
+    "findings": [
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "8 bridges (91.1 mm², longest span 1.8 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:side_right",
+      "data": {
+       "count": 8,
+       "max_span_mm": 1.802457755092945,
+       "area_mm2": 91.14320193058506,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:side_right"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈41.2 g of PLA (13.81 m), ≈79 min, ≈3.29 PLN on generic at 15 % infill.",
+      "subject": "part:side_right",
+      "data": {
+       "mass_g": 41.179018286711,
+       "filament_m": 13.80665029519759,
+       "time_h": 1.3117625661685768,
+       "cost": 3.29432146293688,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:side_right"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "side_right"
+  ]
+ },
+ {
+  "name": "floor_0",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 1,
+  "files": {
+   "stl": "parts/floor_0.stl",
+   "3mf": "parts/floor_0.3mf",
+   "step": "parts/floor_0.step"
+  },
+  "print_rotation": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "floor_0",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 50459.46962123893,
+   "area_mm2": 25472.336468038873,
+   "size_mm": [
+    73.64999999999998,
+    136.49666837911872,
+    15.0
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 15,
+   "bridge_area_mm2": 503.83212474865553,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 9280.566371311705,
+   "min_wall_mm": 0.8788846211908784,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 31.473915916454803,
+    "filament_m": 10.552688445687876,
+    "cost": 2.5179132733163847,
+    "time_h": 1.0209178339199647,
+    "shell_volume_mm3": 20956.78801414076,
+    "infill_volume_mm3": 4425.402241064726
+   },
+   "report": {
+    "title": "print:floor_0",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 2
+    },
+    "findings": [
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "15 bridges (503.8 mm², longest span 12.0 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:floor_0",
+      "data": {
+       "count": 15,
+       "max_span_mm": 11.982906572960458,
+       "area_mm2": 503.83212474865553,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:floor_0"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈31.5 g of PLA (10.55 m), ≈61 min, ≈2.52 PLN on generic at 15 % infill.",
+      "subject": "part:floor_0",
+      "data": {
+       "mass_g": 31.473915916454803,
+       "filament_m": 10.552688445687876,
+       "time_h": 1.0209178339199647,
+       "cost": 2.5179132733163847,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:floor_0"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "floor_0"
+  ]
+ },
+ {
+  "name": "floor_1",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 1,
+  "files": {
+   "stl": "parts/floor_1.stl",
+   "3mf": "parts/floor_1.3mf",
+   "step": "parts/floor_1.step"
+  },
+  "print_rotation": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "floor_1",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 102781.6816845386,
+   "area_mm2": 49433.5709657989,
+   "size_mm": [
+    150.0,
+    136.49666837911872,
+    15.0
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 21,
+   "bridge_area_mm2": 627.139235985342,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 19354.571878316478,
+   "min_wall_mm": 1.0,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 61.779854150690255,
+    "filament_m": 20.713773106683245,
+    "cost": 4.94238833205522,
+    "time_h": 1.9638295920042517,
+    "shell_volume_mm3": 40476.71855537579,
+    "infill_volume_mm3": 9345.744469374422
+   },
+   "report": {
+    "title": "print:floor_1",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 2
+    },
+    "findings": [
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "21 bridges (627.1 mm², longest span 11.5 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:floor_1",
+      "data": {
+       "count": 21,
+       "max_span_mm": 11.459084645690629,
+       "area_mm2": 627.139235985342,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:floor_1"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈61.8 g of PLA (20.71 m), ≈118 min, ≈4.94 PLN on generic at 15 % infill.",
+      "subject": "part:floor_1",
+      "data": {
+       "mass_g": 61.779854150690255,
+       "filament_m": 20.713773106683245,
+       "time_h": 1.9638295920042517,
+       "cost": 4.94238833205522,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:floor_1"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "floor_1"
+  ]
+ },
+ {
+  "name": "floor_2",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 1,
+  "files": {
+   "stl": "parts/floor_2.stl",
+   "3mf": "parts/floor_2.3mf",
+   "step": "parts/floor_2.step"
+  },
+  "print_rotation": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "floor_2",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 142618.05035346316,
+   "area_mm2": 68327.72128511836,
+   "size_mm": [
+    208.225,
+    136.49666837911872,
+    15.0
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 28,
+   "bridge_area_mm2": 770.7262331993776,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 26923.946490014478,
+   "min_wall_mm": 0.8768814783293043,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 85.48049095622572,
+    "filament_m": 28.660208397325363,
+    "cost": 6.8384392764980575,
+    "time_h": 2.701229930687031,
+    "shell_volume_mm3": 55933.143823986335,
+    "infill_volume_mm3": 13002.735979421523
+   },
+   "report": {
+    "title": "print:floor_2",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 2
+    },
+    "findings": [
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "28 bridges (770.7 mm², longest span 11.5 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:floor_2",
+      "data": {
+       "count": 28,
+       "max_span_mm": 11.459084645690638,
+       "area_mm2": 770.7262331993776,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:floor_2"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈85.5 g of PLA (28.66 m), ≈2 h 42 min, ≈6.84 PLN on generic at 15 % infill.",
+      "subject": "part:floor_2",
+      "data": {
+       "mass_g": 85.48049095622572,
+       "filament_m": 28.660208397325363,
+       "time_h": 2.701229930687031,
+       "cost": 6.8384392764980575,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:floor_2"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "floor_2"
+  ]
+ },
+ {
+  "name": "floor_3",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 1,
+  "files": {
+   "stl": "parts/floor_3.stl",
+   "3mf": "parts/floor_3.3mf",
+   "step": "parts/floor_3.step"
+  },
+  "print_rotation": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "floor_3",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 132548.86231767302,
+   "area_mm2": 62109.97929370214,
+   "size_mm": [
+    194.12500000000003,
+    136.49666837911872,
+    15.0
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 24,
+   "bridge_area_mm2": 689.3808393297021,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 25285.60102773938,
+   "min_wall_mm": 0.879776598698185,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 78.07800921361833,
+    "filament_m": 26.178277525997434,
+    "cost": 6.246240737089467,
+    "time_h": 2.4709157585877866,
+    "shell_volume_mm3": 50686.83189993468,
+    "infill_volume_mm3": 12279.30456266075
+   },
+   "report": {
+    "title": "print:floor_3",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 2
+    },
+    "findings": [
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "24 bridges (689.4 mm², longest span 11.5 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:floor_3",
+      "data": {
+       "count": 24,
+       "max_span_mm": 11.459084645690629,
+       "area_mm2": 689.3808393297021,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:floor_3"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈78.1 g of PLA (26.18 m), ≈2 h 28 min, ≈6.25 PLN on generic at 15 % infill.",
+      "subject": "part:floor_3",
+      "data": {
+       "mass_g": 78.07800921361833,
+       "filament_m": 26.178277525997434,
+       "time_h": 2.4709157585877866,
+       "cost": 6.246240737089467,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:floor_3"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "floor_3"
+  ]
+ },
+ {
+  "name": "top_0",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 1,
+  "files": {
+   "stl": "parts/top_0.stl",
+   "3mf": "parts/top_0.3mf",
+   "step": "parts/top_0.step"
+  },
+  "print_rotation": [
+   180.0,
+   0.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "top_0",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 31539.106271340377,
+   "area_mm2": 22471.96790146064,
+   "size_mm": [
+    73.64999999999998,
+    136.49666837911872,
+    13.0
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 8,
+   "bridge_area_mm2": 156.18518996892408,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 9869.20694051067,
+   "min_wall_mm": 0.7999999999999972,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 25.05777695142499,
+    "filament_m": 8.401462150811748,
+    "cost": 2.0046221561139994,
+    "time_h": 0.8157362900557854,
+    "shell_volume_mm3": 18208.257291229296,
+    "infill_volume_mm3": 1999.627347016662
+   },
+   "report": {
+    "title": "print:top_0",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 2
+    },
+    "findings": [
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "8 bridges (156.2 mm², longest span 2.7 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:top_0",
+      "data": {
+       "count": 8,
+       "max_span_mm": 2.6970109183936684,
+       "area_mm2": 156.18518996892408,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:top_0"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈25.1 g of PLA (8.40 m), ≈49 min, ≈2.00 PLN on generic at 15 % infill.",
+      "subject": "part:top_0",
+      "data": {
+       "mass_g": 25.05777695142499,
+       "filament_m": 8.401462150811748,
+       "time_h": 0.8157362900557854,
+       "cost": 2.0046221561139994,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:top_0"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "top_0"
+  ]
+ },
+ {
+  "name": "top_1",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 1,
+  "files": {
+   "stl": "parts/top_1.stl",
+   "3mf": "parts/top_1.3mf",
+   "step": "parts/top_1.step"
+  },
+  "print_rotation": [
+   180.0,
+   0.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "top_1",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 63300.883541767784,
+   "area_mm2": 44352.492814929195,
+   "size_mm": [
+    150.0,
+    136.49666837911872,
+    13.0
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 8,
+   "bridge_area_mm2": 156.18518996892456,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 20290.727571256386,
+   "min_wall_mm": 0.7999999999999973,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 49.52447690767955,
+    "filament_m": 16.60474586732877,
+    "cost": 3.961958152614364,
+    "time_h": 1.576971229953192,
+    "shell_volume_mm3": 35816.42558720185,
+    "infill_volume_mm3": 4122.66869318489
+   },
+   "report": {
+    "title": "print:top_1",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 2
+    },
+    "findings": [
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "8 bridges (156.2 mm², longest span 2.7 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:top_1",
+      "data": {
+       "count": 8,
+       "max_span_mm": 2.697010918393644,
+       "area_mm2": 156.18518996892456,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:top_1"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈49.5 g of PLA (16.60 m), ≈95 min, ≈3.96 PLN on generic at 15 % infill.",
+      "subject": "part:top_1",
+      "data": {
+       "mass_g": 49.52447690767955,
+       "filament_m": 16.60474586732877,
+       "time_h": 1.576971229953192,
+       "cost": 3.961958152614364,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:top_1"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "top_1"
+  ]
+ },
+ {
+  "name": "top_2",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 1,
+  "files": {
+   "stl": "parts/top_2.stl",
+   "3mf": "parts/top_2.3mf",
+   "step": "parts/top_2.step"
+  },
+  "print_rotation": [
+   180.0,
+   0.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "top_2",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 87026.33854754615,
+   "area_mm2": 60671.608038107086,
+   "size_mm": [
+    208.225,
+    136.49666837911872,
+    13.0
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 9,
+   "bridge_area_mm2": 176.93239108371122,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 28207.61730669534,
+   "min_wall_mm": 0.7999999999999972,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 67.74447037323544,
+    "filament_m": 22.713611222210144,
+    "cost": 5.4195576298588355,
+    "time_h": 2.143851751457196,
+    "shell_volume_mm3": 48916.101900751295,
+    "infill_volume_mm3": 5716.535497019228
+   },
+   "report": {
+    "title": "print:top_2",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 2
+    },
+    "findings": [
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "9 bridges (176.9 mm², longest span 2.7 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:top_2",
+      "data": {
+       "count": 9,
+       "max_span_mm": 2.697010918393644,
+       "area_mm2": 176.93239108371122,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:top_2"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈67.7 g of PLA (22.71 m), ≈2 h 09 min, ≈5.42 PLN on generic at 15 % infill.",
+      "subject": "part:top_2",
+      "data": {
+       "mass_g": 67.74447037323544,
+       "filament_m": 22.713611222210144,
+       "time_h": 2.143851751457196,
+       "cost": 5.4195576298588355,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:top_2"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "top_2"
+  ]
+ },
+ {
+  "name": "top_3",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 1,
+  "files": {
+   "stl": "parts/top_3.stl",
+   "3mf": "parts/top_3.3mf",
+   "step": "parts/top_3.step"
+  },
+  "print_rotation": [
+   180.0,
+   0.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "top_3",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 81562.49833675045,
+   "area_mm2": 56636.25446688019,
+   "size_mm": [
+    194.12500000000003,
+    136.49666837911872,
+    13.0
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 12,
+   "bridge_area_mm2": 234.27778495338654,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 26221.756720679296,
+   "min_wall_mm": 0.799999999999997,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 63.30076424623388,
+    "filament_m": 21.22370934832461,
+    "cost": 5.06406113969871,
+    "time_h": 2.0055942679159786,
+    "shell_volume_mm3": 45664.26902808188,
+    "infill_volume_mm3": 5384.734396300285
+   },
+   "report": {
+    "title": "print:top_3",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 2
+    },
+    "findings": [
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "12 bridges (234.3 mm², longest span 2.7 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:top_3",
+      "data": {
+       "count": 12,
+       "max_span_mm": 2.6970109183936684,
+       "area_mm2": 234.27778495338654,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:top_3"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈63.3 g of PLA (21.22 m), ≈2 h 00 min, ≈5.06 PLN on generic at 15 % infill.",
+      "subject": "part:top_3",
+      "data": {
+       "mass_g": 63.30076424623388,
+       "filament_m": 21.22370934832461,
+       "time_h": 2.0055942679159786,
+       "cost": 5.06406113969871,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:top_3"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "top_3"
+  ]
+ },
+ {
+  "name": "back_0",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 1,
+  "files": {
+   "stl": "parts/back_0.stl",
+   "3mf": "parts/back_0.3mf",
+   "step": "parts/back_0.step"
+  },
+  "print_rotation": [
+   -90.0,
+   0.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "back_0",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 22660.80291003993,
+   "area_mm2": 18409.225948676478,
+   "size_mm": [
+    76.64999999999998,
+    109.5,
+    3.0
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 8,
+   "bridge_area_mm2": 165.9776089182943,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 7476.144752518105,
+   "min_wall_mm": 1.316839738185228,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 20.06694168239117,
+    "filament_m": 6.728116837897248,
+    "cost": 1.6053553345912939,
+    "time_h": 0.6326781437422583,
+    "shell_volume_mm3": 15039.878881521581,
+    "infill_volume_mm3": 1143.1386042777522
+   },
+   "report": {
+    "title": "print:back_0",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 2
+    },
+    "findings": [
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "8 bridges (166.0 mm², longest span 2.7 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:back_0",
+      "data": {
+       "count": 8,
+       "max_span_mm": 2.6970109183936684,
+       "area_mm2": 165.9776089182943,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:back_0"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈20.1 g of PLA (6.73 m), ≈38 min, ≈1.61 PLN on generic at 15 % infill.",
+      "subject": "part:back_0",
+      "data": {
+       "mass_g": 20.06694168239117,
+       "filament_m": 6.728116837897248,
+       "time_h": 0.6326781437422583,
+       "cost": 1.6053553345912939,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:back_0"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "back_0"
+  ]
+ },
+ {
+  "name": "back_1",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 1,
+  "files": {
+   "stl": "parts/back_1.stl",
+   "3mf": "parts/back_1.3mf",
+   "step": "parts/back_1.step"
+  },
+  "print_rotation": [
+   -90.0,
+   0.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "back_1",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 43236.01057540764,
+   "area_mm2": 35287.3967998236,
+   "size_mm": [
+    150.0,
+    109.5,
+    3.0
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 9,
+   "bridge_area_mm2": 186.72481003308135,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 14324.865280453774,
+   "min_wall_mm": 1.2353671408204723,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 38.456479380264085,
+    "filament_m": 12.893827596641112,
+    "cost": 3.076518350421127,
+    "time_h": 1.2048337122991366,
+    "shell_volume_mm3": 28856.339101744084,
+    "infill_volume_mm3": 2156.9507210495335
+   },
+   "report": {
+    "title": "print:back_1",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 2
+    },
+    "findings": [
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "9 bridges (186.7 mm², longest span 2.7 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:back_1",
+      "data": {
+       "count": 9,
+       "max_span_mm": 2.6970109183936395,
+       "area_mm2": 186.72481003308135,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:back_1"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈38.5 g of PLA (12.89 m), ≈72 min, ≈3.08 PLN on generic at 15 % infill.",
+      "subject": "part:back_1",
+      "data": {
+       "mass_g": 38.456479380264085,
+       "filament_m": 12.893827596641112,
+       "time_h": 1.2048337122991366,
+       "cost": 3.076518350421127,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:back_1"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "back_1"
+  ]
+ },
+ {
+  "name": "back_2",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 1,
+  "files": {
+   "stl": "parts/back_2.stl",
+   "3mf": "parts/back_2.3mf",
+   "step": "parts/back_2.step"
+  },
+  "print_rotation": [
+   -90.0,
+   0.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "back_2",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 60213.50988754992,
+   "area_mm2": 48860.094935845606,
+   "size_mm": [
+    208.225,
+    109.5,
+    3.0
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 10,
+   "bridge_area_mm2": 207.47201114786805,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 19974.349690647632,
+   "min_wall_mm": 1.016712660578985,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 53.29407088048873,
+    "filament_m": 17.868628978263853,
+    "cost": 4.2635256704390985,
+    "time_h": 1.6664772152680933,
+    "shell_volume_mm3": 39937.721101901756,
+    "infill_volume_mm3": 3041.3683178472243
+   },
+   "report": {
+    "title": "print:back_2",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 2
+    },
+    "findings": [
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "10 bridges (207.5 mm², longest span 2.7 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:back_2",
+      "data": {
+       "count": 10,
+       "max_span_mm": 2.697010918393626,
+       "area_mm2": 207.47201114786805,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:back_2"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈53.3 g of PLA (17.87 m), ≈100 min, ≈4.26 PLN on generic at 15 % infill.",
+      "subject": "part:back_2",
+      "data": {
+       "mass_g": 53.29407088048873,
+       "filament_m": 17.868628978263853,
+       "time_h": 1.6664772152680933,
+       "cost": 4.2635256704390985,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:back_2"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "back_2"
+  ]
+ },
+ {
+  "name": "back_3",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 1,
+  "files": {
+   "stl": "parts/back_3.stl",
+   "3mf": "parts/back_3.3mf",
+   "step": "parts/back_3.step"
+  },
+  "print_rotation": [
+   -90.0,
+   0.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "back_3",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 56805.69222772258,
+   "area_mm2": 46238.13536408704,
+   "size_mm": [
+    197.12500000000003,
+    109.5,
+    3.0
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 10,
+   "bridge_area_mm2": 207.47201114786802,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 18838.41047070518,
+   "min_wall_mm": 1.0936183979958813,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 50.4124819335546,
+    "filament_m": 16.90247940646443,
+    "cost": 4.032998554684369,
+    "time_h": 1.5768220434324782,
+    "shell_volume_mm3": 37805.14533130759,
+    "infill_volume_mm3": 2850.0820344622484
+   },
+   "report": {
+    "title": "print:back_3",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 2
+    },
+    "findings": [
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "10 bridges (207.5 mm², longest span 2.7 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:back_3",
+      "data": {
+       "count": 10,
+       "max_span_mm": 2.6970109183936684,
+       "area_mm2": 207.47201114786802,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:back_3"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈50.4 g of PLA (16.90 m), ≈95 min, ≈4.03 PLN on generic at 15 % infill.",
+      "subject": "part:back_3",
+      "data": {
+       "mass_g": 50.4124819335546,
+       "filament_m": 16.90247940646443,
+       "time_h": 1.5768220434324782,
+       "cost": 4.032998554684369,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:back_3"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "back_3"
+  ]
+ },
+ {
+  "name": "splice",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 3,
+  "files": {
+   "stl": "parts/splice.stl",
+   "3mf": "parts/splice.3mf",
+   "step": "parts/splice.step"
+  },
+  "print_rotation": [
+   -90.0,
+   0.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "splice",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ],
+    [
+     0.0,
+     -1.0,
+     0.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 5791.894722872804,
+   "area_mm2": 3910.3158786846407,
+   "size_mm": [
+    17.0,
+    87.5,
+    4.0
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 0,
+   "bridge_area_mm2": 0.0,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 1447.973680718201,
+   "min_wall_mm": 2.2257893233279447,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 4.481385209079199,
+    "filament_m": 1.5025350529008275,
+    "cost": 0.3585108167263359,
+    "time_h": 0.15054090778945137,
+    "shell_volume_mm3": 3229.68955467254,
+    "infill_volume_mm3": 384.3307752300396
+   },
+   "report": {
+    "title": "print:splice",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 1
+    },
+    "findings": [
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈4.5 g of PLA (1.50 m), ≈9 min, ≈0.36 PLN on generic at 15 % infill.",
+      "subject": "part:splice",
+      "data": {
+       "mass_g": 4.481385209079199,
+       "filament_m": 1.5025350529008275,
+       "time_h": 0.15054090778945137,
+       "cost": 0.3585108167263359,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:splice"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "splice_0",
+   "splice_1",
+   "splice_2"
+  ]
+ },
+ {
+  "name": "pillar",
+  "material": "PLA",
+  "color": "#16171a",
+  "quantity": 6,
+  "files": {
+   "stl": "parts/pillar.stl",
+   "3mf": "parts/pillar.3mf",
+   "step": "parts/pillar.step"
+  },
+  "print_rotation": [
+   0.0,
+   90.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "pillar",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     0.0,
+     0.0,
+     1.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     -1.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 11595.948024556792,
+   "area_mm2": 5321.008267547893,
+   "size_mm": [
+    101.5,
+    12.0,
+    10.0
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 6,
+   "bridge_area_mm2": 108.92248354449005,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 1156.6810712850427,
+   "min_wall_mm": 2.6227196976794733,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 6.912003794693079,
+    "filament_m": 2.317481649707106,
+    "cost": 0.5529603035754462,
+    "time_h": 0.24283165928331213,
+    "shell_volume_mm3": 4511.534594046979,
+    "infill_volume_mm3": 1062.6620145764718
+   },
+   "report": {
+    "title": "print:pillar",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 2
+    },
+    "findings": [
+     {
+      "code": "PRINT.BRIDGE",
+      "severity": "info",
+      "message": "6 bridges (108.9 mm², longest span 2.8 mm; generic bridges up to 20 mm) print without supports.",
+      "subject": "part:pillar",
+      "data": {
+       "count": 6,
+       "max_span_mm": 2.8365753544398014,
+       "area_mm2": 108.92248354449005,
+       "max_bridge_mm": 20.0
+      },
+      "hint": "Keep bridged roofs flat and short; slicers print them with bridge settings.",
+      "source": "print:pillar"
+     },
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈6.9 g of PLA (2.32 m), ≈15 min, ≈0.55 PLN on generic at 15 % infill.",
+      "subject": "part:pillar",
+      "data": {
+       "mass_g": 6.912003794693079,
+       "filament_m": 2.317481649707106,
+       "time_h": 0.24283165928331213,
+       "cost": 0.5529603035754462,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:pillar"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "pillar_0",
+   "pillar_1",
+   "pillar_2",
+   "pillar_3",
+   "pillar_4",
+   "pillar_5"
+  ]
+ },
+ {
+  "name": "comma_inlay",
+  "material": "PLA",
+  "color": "#f2f2f2",
+  "quantity": 1,
+  "files": {
+   "stl": "parts/comma_inlay.stl",
+   "3mf": "parts/comma_inlay.3mf",
+   "step": "parts/comma_inlay.step"
+  },
+  "print_rotation": [
+   90.0,
+   0.0,
+   0.0
+  ],
+  "analysis": {
+   "name": "comma_inlay",
+   "printer": "generic",
+   "material": "PLA",
+   "rotation": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     -1.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ]
+   ],
+   "watertight": true,
+   "winding_consistent": true,
+   "body_count": 1,
+   "volume_mm3": 176.47023829030113,
+   "area_mm2": 368.81158968137106,
+   "size_mm": [
+    10.326086927788282,
+    20.652173855576557,
+    1.200000000000017
+   ],
+   "fits_bed": true,
+   "overhang_area_mm2": 0.0,
+   "bridge_count": 0,
+   "bridge_area_mm2": 0.0,
+   "fillet_count": 0,
+   "fillet_area_mm2": 0.0,
+   "bed_contact_area_mm2": 147.03482035350817,
+   "min_wall_mm": 1.2000000000000026,
+   "needs_supports": false,
+   "estimate": {
+    "mass_g": 0.2188230954799734,
+    "filament_m": 0.0733677994645057,
+    "cost": 0.01750584763839787,
+    "time_h": 0.010141598699471493,
+    "shell_volume_mm3": 176.47023829030113,
+    "infill_volume_mm3": 0.0
+   },
+   "report": {
+    "title": "print:comma_inlay",
+    "ok": true,
+    "counts": {
+     "error": 0,
+     "warning": 0,
+     "info": 1
+    },
+    "findings": [
+     {
+      "code": "PRINT.ESTIMATE",
+      "severity": "info",
+      "message": "≈0.2 g of PLA (0.07 m), ≈1 min, ≈0.02 PLN on generic at 15 % infill.",
+      "subject": "part:comma_inlay",
+      "data": {
+       "mass_g": 0.2188230954799734,
+       "filament_m": 0.0733677994645057,
+       "time_h": 0.010141598699471493,
+       "cost": 0.01750584763839787,
+       "currency": "PLN",
+       "infill": 0.15
+      },
+      "hint": "",
+      "source": "print:comma_inlay"
+     }
+    ]
+   }
+  },
+  "node_ids": [
+   "comma_inlay"
+  ]
+ }
+]

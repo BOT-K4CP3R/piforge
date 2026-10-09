@@ -1,0 +1,39 @@
+# money_counter — firmware configuration (read by firmware/main.py and by project.py).
+# Environment overrides: MONEY_COUNTER_URL (client URL), MONEY_COUNTER_CONFIG (path of this file).
+
+[network]
+mode = "client"                 # "client": connect to a WebSocket server | "server": listen (WS + HTTP)
+url = "ws://192.168.1.10:8765/" # client mode; MONEY_COUNTER_URL overrides it (the twin sets it)
+json_path = "amount"            # dot path of the amount in a JSON message ({"amount": 1234.56})
+reconnect_min_s = 0.5           # client: first retry delay; doubles up to reconnect_max_s
+reconnect_max_s = 10.0
+listen_host = "0.0.0.0"         # server mode
+ws_port = 8765                  # server mode: WebSocket, send {"amount": x} or a bare number
+http_port = 8080                # server mode: POST /amount with the same body; GET /amount = status
+
+[display]
+max_amount = 999999.99          # larger amounts are clamped (and logged)
+# count-up duration = time the farthest-moving digit needs at full speed (≤ 9 flaps ≈ 2.3 s at 850),
+# clamped to [count_time_min, count_time_max]; +0.01 PLN = one flap ≈ 0.3 s
+count_time_min = 0.25
+count_time_max = 3.0
+
+[motion]
+steps_per_rev = 4096            # half-steps per spool turn (28BYJ-48 nominal; measured ≈ 4076)
+flaps = 20                      # 0–9 twice
+# Trapezoid ramp per move: start at start_pps (< pull-in ≈ 500), accelerate at accel, cruise at
+# max_pps (< pull-out ≈ 950 for a 5 V 28BYJ-48 with a light spool), brake back to start_pps on target.
+max_pps = 850                   # half-steps/s top speed ≈ 4.15 flaps/s (12 V motors: see README)
+start_pps = 450                 # half-steps/s: start / stop speed (no ramp needed below it)
+accel = 3000                    # half-steps/s²: 450 → 850 in 0.13 s / 86 half-steps
+resync_tolerance = 24           # half-steps: Hall-check errors up to this are corrected silently
+selftest = true                 # after homing: one checked turn at max_pps (lowers it on a module that slips)
+hold_ms = 60                    # coils stay energised this long after a module stops, then off
+spi_bus = 0
+spi_device = 0                  # CE0 = GPIO8 = RCLK (latch) of the 74HCT595 chain
+spi_speed_hz = 1000000
+home_timeout_s = 12.0           # > one spool turn at start_pps (power-up homing turns slowly)
+# Module i (0 = leftmost, 100 000 PLN) uses 74HCT595 outputs 4i…4i+3 (IN1…IN4 of its ULN2003)
+hall_pins = [4, 5, 6, 13, 16, 19, 20, 21]   # BCM, left → right, internal pull-ups
+# half-steps from the Hall edge (magnet arriving) to digit 0 fully shown — calibrate per module
+offsets = [0, 0, 0, 0, 0, 0, 0, 0]

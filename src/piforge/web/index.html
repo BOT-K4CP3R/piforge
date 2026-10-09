@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PiForge</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234c8dff'/%3E%3Cpath d='M10 24V9h7a4.5 4.5 0 0 1 0 9h-7' stroke='white' stroke-width='3.2' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>
+  try { document.documentElement.dataset.theme = localStorage.getItem('piforge.theme') || 'dark'; } catch (e) { /* default */ }
+</script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "/static/vendor/three/three.module.js",
+    "three/addons/": "/static/vendor/three/addons/",
+    "uplot": "/static/vendor/uplot/uPlot.esm.js"
+  }
+}
+</script>
+<link rel="stylesheet" href="/static/vendor/uplot/uPlot.min.css">
+<link rel="stylesheet" href="/static/css/app.css">
+<link rel="modulepreload" href="/static/vendor/three/three.module.js">
+<link rel="modulepreload" href="/static/vendor/three/three.core.js">
+</head>
+<body>
+<header id="topbar">
+  <div class="brand" title="PiForge — design, simulate and test Raspberry Pi devices">
+    <svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><rect width="32" height="32" rx="7" fill="var(--accent)"/><path d="M10 24V9h7a4.5 4.5 0 0 1 0 9h-7" stroke="#fff" stroke-width="3.2" fill="none" stroke-linejoin="round"/></svg>
+    <span class="brand-name">PiForge</span>
+  </div>
+  <div class="proj">
+    <span id="proj-name" class="proj-name">…</span>
+    <span id="proj-desc" class="proj-desc"></span>
+  </div>
+  <div id="proj-chips" class="chips"></div>
+  <div class="spacer"></div>
+  <span id="build-info" class="build-info"></span>
+  <div class="counters" role="group" aria-label="Findings">
+    <button id="count-error" class="counter sev-error" title="Errors — show in Checks" data-testid="count-error"><i data-icon="error" data-size="14"></i><span class="n">0</span></button>
+    <button id="count-warning" class="counter sev-warning" title="Warnings — show in Checks" data-testid="count-warning"><i data-icon="alert" data-size="14"></i><span class="n">0</span></button>
+    <button id="count-info" class="counter sev-info" title="Info — show in Checks" data-testid="count-info"><i data-icon="info" data-size="14"></i><span class="n">0</span></button>
+  </div>
+  <button id="btn-rebuild" class="btn" title="Rebuild the project (parts, electronics, simulations)" data-testid="rebuild"><i data-icon="refresh" data-size="15"></i><span>Rebuild</span></button>
+  <button id="btn-theme" class="btn icon-only" title="Toggle light/dark theme" aria-label="Toggle theme"></button>
+</header>
+
+<main id="main">
+  <aside id="left" class="panel" aria-label="Scene tree">
+    <div class="panel-head"><span>Scene</span></div>
+    <div id="tree" class="panel-body"></div>
+  </aside>
+  <div class="splitter" data-side="left" title="Drag to resize"></div>
+
+  <section id="viewport" aria-label="3D view">
+    <div id="canvas-host"></div>
+    <div class="vp-top">
+      <div class="vp-toolbar" role="toolbar" aria-label="View tools">
+        <div class="tool-group">
+          <button class="tool" data-action="fit" title="Fit all (F)"><i data-icon="fit"></i><span>Fit</span></button>
+          <button class="tool" data-action="view-iso" title="Isometric view"><i data-icon="cube"></i><span>Iso</span></button>
+          <button class="tool" data-action="view-front" title="Front view (from −Y)"><span>Front</span></button>
+          <button class="tool" data-action="view-top" title="Top view (from +Z)"><span>Top</span></button>
+          <button class="tool" data-action="view-right" title="Right view (from +X)"><span>Right</span></button>
+        </div>
+        <div class="tool-group">
+          <button class="tool" data-action="section" title="Section plane"><i data-icon="scissors"></i><span>Section</span></button>
+          <button class="tool" data-action="measure" title="Measure distance (mm)"><i data-icon="ruler"></i><span>Measure</span></button>
+          <button class="tool" data-action="overhang" title="Overhang heat-map of the selected printed part"><i data-icon="flame"></i><span>Overhang</span></button>
+          <button class="tool" data-action="bed" title="Print-bed view of the selected printed part"><i data-icon="bed"></i><span>Bed</span></button>
+          <button class="tool" data-action="xray" title="X-ray: see the selected parts through the others" aria-pressed="false"><i data-icon="xray"></i><span>X-ray</span></button>
+          <button class="tool on icon-only" data-action="grid" title="Grid (10 mm minor, 50 mm major)" aria-label="Toggle grid"><i data-icon="grid"></i></button>
+        </div>
+        <div class="tool-group" id="wire-tools" hidden>
+          <button class="tool on" data-action="wires" title="Show the wiring harness: wires in their insulation colour, connector pins (W)" aria-pressed="true" data-testid="wires-toggle"><i data-icon="cable"></i><span>Wires</span></button>
+          <button class="tool" data-action="wire-xray" title="X-ray parts: see the wires inside the closed housing (parts translucent, wires solid)" aria-pressed="false" data-testid="wire-xray"><i data-icon="xray"></i><span>X-ray parts</span></button>
+        </div>
+        <label class="tool-group explode" title="Explode the assembly">
+          <i data-icon="explode"></i><span>Explode</span>
+          <input id="explode" type="range" min="0" max="100" step="1" value="0" data-testid="explode" aria-label="Explode">
+          <span id="explode-value" class="mono">0 %</span>
+        </label>
+      </div>
+      <div class="vp-under">
+        <div id="vp-legend" class="vp-card legend" hidden></div>
+        <div id="section-panel" class="vp-float" hidden>
+          <div class="segmented small">
+            <button data-axis="x">X</button><button data-axis="y">Y</button><button data-axis="z" class="on">Z</button>
+          </div>
+          <button class="btn small" data-action="section-flip" title="Keep the other side">Flip</button>
+          <input id="section-slider" type="range" min="0" max="100" step="0.1" value="50" aria-label="Section position" data-testid="section-slider">
+          <span id="section-value" class="mono">z = 0 mm</span>
+        </div>
+      </div>
+    </div>
+    <div id="vp-info" class="vp-card info" hidden></div>
+    <div id="vp-measure" class="vp-hint" hidden></div>
+    <div id="vp-hover" class="vp-hover" hidden></div>
+    <div id="vp-loading" class="vp-loading" hidden>Loading…</div>
+    <div id="vp-empty" class="vp-empty" hidden>
+      <div class="empty-title">No build yet</div>
+      <div class="empty-detail">Build the project to see the 3D assembly, checks and simulations.</div>
+      <button class="btn primary" onclick="document.getElementById('btn-rebuild').click()">Build now</button>
+    </div>
+  </section>
+
+  <div class="splitter" data-side="right" title="Drag to resize"></div>
+  <aside id="right" class="panel" aria-label="Details">
+    <nav id="tabs" class="tabs" role="tablist">
+      <button role="tab" id="tab-btn-checks" data-tab="checks" data-testid="tab-checks">Checks <span class="badge"></span></button>
+      <button role="tab" id="tab-btn-elec" data-tab="elec" data-testid="tab-elec">Electronics</button>
+      <button role="tab" id="tab-btn-spice" data-tab="spice" data-testid="tab-spice">SPICE</button>
+      <button role="tab" id="tab-btn-twin" data-tab="twin" data-testid="tab-twin">Twin <span class="live-dot" aria-hidden="true"></span></button>
+      <button role="tab" id="tab-btn-print" data-tab="print" data-testid="tab-print">Print</button>
+    </nav>
+    <div class="tab-body">
+      <section id="tab-checks" class="tab-pane" role="tabpanel"></section>
+      <section id="tab-elec" class="tab-pane" role="tabpanel" hidden></section>
+      <section id="tab-spice" class="tab-pane" role="tabpanel" hidden></section>
+      <section id="tab-twin" class="tab-pane" role="tabpanel" hidden></section>
+      <section id="tab-print" class="tab-pane" role="tabpanel" hidden></section>
+    </div>
+  </aside>
+</main>
+<div id="toasts" aria-live="polite"></div>
+<script type="module" src="/static/js/main.js"></script>
+</body>
+</html>
