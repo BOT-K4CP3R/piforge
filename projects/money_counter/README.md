@@ -3,12 +3,12 @@
 A physical split-flap display (like a departure board): 8 digit modules of 50 mm plus a fixed comma
 after the sixth digit. A Raspberry Pi Zero 2 W receives the amount over WebSocket and **counts up** —
 the higher digits follow the counter, the lower ones spin at full speed, and in the end everything
-lands exactly on the amount (0 → 1234,56 in ≈ 2 s, +0,01 PLN in ≈ 0,4 s; see
+lands exactly on the amount (0 → 1234,56 in ≈ 1.7 s, +0,01 PLN in ≈ 0,4 s; see
 [Speed vs accuracy](#speed-vs-accuracy)).
 
 ```sh
 .venv/bin/piforge check projects/money_counter              # ≈ 15 s, writes nothing
-.venv/bin/piforge build projects/money_counter --scenarios  # build/ + 9 twin scenarios (≈ 4 min)
+.venv/bin/piforge build projects/money_counter --scenarios  # build/ + 9 twin scenarios (≈ 4–10 min)
 .venv/bin/piforge serve projects/money_counter              # GUI: 3D, Twin, SPICE, print
 .venv/bin/python -m pytest projects/money_counter/firmware/tests -q   # firmware tests, no Pi needed
 ```
@@ -194,10 +194,11 @@ WantedBy=multi-user.target
 
 | Change | Before (constant 600 half-steps/s) | Now (ramp 450 → 850) |
 |---|---:|---:|
-| 0 → 1234,56 | 5.2 s | ≈ 1.9 s |
+| 0 → 1234,56 | 5.2 s | ≈ 1.7 s |
 | 1234,56 → 1234,57 | 0.9 s | ≈ 0.4 s |
-| 1234,57 → 999999,99 | 7.7 s | ≈ 2.8 s |
-| startup (homing) | 1.5 s | ≈ 8 s (homing + self-test) |
+| 1234,57 → 999999,99 | 7.7 s | ≈ 2.5 s |
+| 999999,99 → 1,00 (forward wrap) | 0.8 s | ≈ 0.6 s |
+| startup (homing) | 1.5 s | ≈ 7 s (homing + self-test) |
 
 **How it is faster:**
 
@@ -206,9 +207,11 @@ WantedBy=multi-user.target
   loss-of-synchronism limit of ≈ 950 for 5 V), and decelerate so that the last step is again at
   `start_pps` — the module stops exactly on the flap.
 * **One loop for 8 motors:** each module has its own deadline for the next step, the loop wakes at
-  most once per tick (`1/max_pps`) and sends **one** 32-bit SPI word with the steps of all modules
-  whose deadline has arrived. A late step is never "caught up" with a burst — the module slows down
-  and accelerates again (a system stall costs time, not steps).
+  most once per tick (`1/max_pps`, on a fixed time grid, so sleep overshoot does not slow the
+  motors down) and sends **one** 32-bit SPI word with the steps of all modules whose deadline has
+  arrived. A late step is never "caught up" with a burst — the module slows down
+  and accelerates again (a system stall costs time, not steps); an SPI word that went out late counts
+  from when it went out, so the next step never follows right behind it.
 * **Counting up:** the time = the travel of the digit that has to go furthest at full speed (the digits
   arrive together), the lower digits spin at full speed, the higher ones are commanded one flap-time
   earlier (they arrive together with the counter). `count_time_max` (3 s) is the upper bound.
@@ -261,8 +264,8 @@ The default project stays on 5 V. The **12 V** version of the same motor has a h
 resistance (≈ 130–200 Ω per phase instead of ≈ 50 Ω, depending on the manufacturer), so at a higher
 voltage the current rises faster relative to the step period and the torque at high speed drops later.
 Estimated (# src: est, to be measured with the self-test) the stall limit rises from ≈ 950 to
-≈ 1300–1500 half-steps/s, i.e. **≈ +40 %**: 0 → 1234,56 in ≈ 1.4 s instead of ≈ 1.9 s, → 999999,99 in
-≈ 2.0 s.
+≈ 1300–1500 half-steps/s, i.e. **≈ +40 %**: 0 → 1234,56 in ≈ 1.3 s instead of ≈ 1.7 s, → 999999,99 in
+≈ 1.8 s.
 
 Changes:
 
@@ -318,8 +321,8 @@ Changes:
 
 Scenarios (`piforge twin test projects/money_counter`, all PASS; time 0 = firmware start, after ≈ 7–9 s
 of homing and self-test the actions begin at 15 s):
-`homing_to_zero`, `count_up_1234_56` (≤ 3 s, previously 5.2 s), `last_digit_1234_57` (≤ 0.9 s),
-`big_jump_999999_99` (≤ 4 s, previously 7.7 s), `overflow_clamps`, `invalid_ignored` (negative
+`homing_to_zero`, `count_up_1234_56` (≈ 1.7 s, window ≤ 4 s for a loaded host; previously 5.2 s), `last_digit_1234_57` (≤ 0.9 s),
+`big_jump_999999_99` (≈ 2.5 s, window ≤ 5 s; previously 7.7 s), `overflow_clamps`, `invalid_ignored` (negative
 amount), `feed_reconnect`, `rapid_updates` (10 amounts in 2 s → exactly the last one), `slip_resync`
 (the `M8` rotor pushed back by 300 half-steps during motion → `RESYNC m7 err=+300` → the digit is
 still exact). Most scenarios also check that no motor lost a step (`M*.lost_steps == 0`).
@@ -354,7 +357,7 @@ still exact). Most scenarios also check that no motor lost a step (`M*.lost_step
 * The Hall sensor is the only position sensor: lost steps show up only when the magnet passes. A motor
   does not lose steps at the speed verified by the self-test, but **a nudge to a stationary spool** is
   detected and corrected only at its next magnet pass (≤ 1 revolution).
-* Startup takes ≈ 7–9 s (homing + one verified revolution); `selftest = false` shortens it to ≈ 2 s
+* Startup takes ≈ 7 s (homing + one verified revolution); `selftest = false` shortens it to ≈ 2 s
   at the cost of not measuring the safe speed.
 * The twin's stall model (`stall_model`) is behavioral (estimated limits, no torque curve or
   resonances); real limits will be measured by the self-test on the Pi.

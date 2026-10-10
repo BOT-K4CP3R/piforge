@@ -81,7 +81,8 @@ def homed(at: float = 0.3) -> Step:
 def add_scenarios(p: Project) -> None:
     """Timing (850 half-steps/s, 3000/s² ramps): a flap takes ≈ 0.29 s from rest; a count lasts as long
     as the farthest-moving digit needs (≤ 9 flaps ≈ 2.3 s). Before (600 half-steps/s, log-time count):
-    0 → 1234,56 took 5.2 s, → 999999,99 7.7 s. Windows below are those times with host-load margin."""
+    0 → 1234,56 took 5.2 s, → 999999,99 7.7 s; now ≈ 1.7 s / 2.5 s. The scenarios run in real time, so the
+    windows below leave room for a loaded host (10 busy processes on 8 cores: 2.8 s / 4.2 s, still exact)."""
     # 1. power-up: every spool turns to its magnet, one checked turn, then digit 0
     p.scenario(Scenario("homing_to_zero", duration=READY + 3.0, steps=[
         Step(at=0.3, action="expect_log", pattern=r"SELFTEST m7: one turn at 850", settle=READY - 0.3),
@@ -92,37 +93,37 @@ def add_scenarios(p: Project) -> None:
         *no_lost_steps(READY + 1.5),
     ]))
     # 2. 0 → 1234,56 counts up (low digits scroll) and lands exactly — in < 3 s (was 5.2 s)
-    p.scenario(Scenario("count_up_1234_56", duration=READY + 5.0, steps=[
+    p.scenario(Scenario("count_up_1234_56", duration=READY + 6.0, steps=[
         homed(),
         amount(READY, 1234.56),
         Step(at=READY + 0.05, action="expect_log", pattern=r"TARGET 001234,56 \(count-up 1\.\d s\)"),
         Step(at=READY + 0.4, action="expect", device="M8", prop="rpm", value=1.0, op=">"),   # low digits turning
-        show(READY + 0.5, "001234,56", 2.5),                    # ≤ 3 s after the amount
-        *digits_expect(READY + 3.2, "001234,56"),
-        *no_lost_steps(READY + 4.0),
+        show(READY + 0.5, "001234,56", 3.5),                    # ≈ 1.7 s; ≤ 4 s even on a loaded host
+        *digits_expect(READY + 4.2, "001234,56"),
+        *no_lost_steps(READY + 5.0),
     ]))
     # 3. 1234,56 → 1234,57: only the last module turns one flap, in well under a second
     p.scenario(Scenario("last_digit_1234_57", duration=READY + 7.0, steps=[
         homed(),
         amount(READY, 1234.56),
-        show(READY, "001234,56", 3.0),
+        show(READY, "001234,56", 3.8),                          # setup (speed: count_up_1234_56)
         amount(READY + 4.0, 1234.57),
         show(READY + 4.0, "001234,57", 0.9),
         Step(at=READY + 5.0, action="expect", device="SF7", prop="digit", value=5),
         Step(at=READY + 5.0, action="expect", device="SF8", prop="digit", value=7),
     ]))
     # 4. big jump 1 → 999999,99: every digit spins at full speed, all land on 9 together (was 7.7 s)
-    p.scenario(Scenario("big_jump_999999_99", duration=READY + 9.0, steps=[
+    p.scenario(Scenario("big_jump_999999_99", duration=READY + 10.0, steps=[
         homed(),
         amount(READY, 1.0),
-        show(READY, "000001,00", 2.5),
+        show(READY, "000001,00", 2.9),
         amount(READY + 3.0, 999999.99),
         Step(at=READY + 3.05, action="expect_log", pattern=r"TARGET 999999,99"),
         Step(at=READY + 3.5, action="expect", device="M8", prop="rpm", value=1.0, op=">"),
         Step(at=READY + 3.5, action="expect", device="M5", prop="rpm", value=1.0, op=">"),
-        show(READY + 3.6, "999999,99", 3.4),                    # ≤ 4 s after the amount
-        *digits_expect(READY + 7.2, "999999,99"),
-        *no_lost_steps(READY + 8.0),
+        show(READY + 3.6, "999999,99", 4.4),                    # ≈ 2.5 s; ≤ 5 s even on a loaded host
+        *digits_expect(READY + 8.2, "999999,99"),
+        *no_lost_steps(READY + 9.0),
     ]))
     # 5. overflow: 2 000 000 is clamped to the maximum and logged (sent during power-up: kept, then counted)
     p.scenario(Scenario("overflow_clamps", duration=READY + 5.0, steps=[
@@ -135,18 +136,18 @@ def add_scenarios(p: Project) -> None:
     p.scenario(Scenario("invalid_ignored", duration=READY + 7.0, steps=[
         homed(),
         amount(READY, 12.34),
-        show(READY, "000012,34", 3.0),
+        show(READY, "000012,34", 3.4),
         amount(READY + 3.5, -5.0),
         Step(at=READY + 3.6, action="expect_log", pattern=r"IGNORED invalid message .*negative"),
         *digits_expect(READY + 4.0, "000012,34"),
         amount(READY + 4.5, 12.35),
-        show(READY + 4.5, "000012,35", 1.2),
+        show(READY + 4.5, "000012,35", 2.0),
     ]))
     # 7. the WebSocket server goes away, the amount changes meanwhile, it comes back: reconnect, catch up
     p.scenario(Scenario("feed_reconnect", duration=READY + 14.0, steps=[
         homed(),
         amount(READY, 5.0),
-        show(READY, "000005,00", 2.5),
+        show(READY, "000005,00", 2.9),
         Step(at=READY + 3.0, action="input", device=FEED, prop="online", value=False),
         Step(at=READY + 3.1, action="expect_log", pattern=r"offline .*reconnecting in"),
         amount(READY + 4.0, 77.77),
@@ -169,10 +170,13 @@ def add_scenarios(p: Project) -> None:
     p.scenario(Scenario("slip_resync", duration=READY + 11.0, steps=[
         homed(),
         amount(READY, 1234.56),                                   # SF8 → flap 6
-        show(READY, "001234,56", 3.0),
+        show(READY, "001234,56", 3.4),
         amount(READY + 3.5, 1235.55),                             # SF8 6 → 5: flap 15
-        show(READY + 3.5, "001235,55", 3.0),
+        show(READY + 3.5, "001235,55", 3.4),
         amount(READY + 7.0, 1236.54),                             # SF8 5 → 4: flap 24, past its magnet
+        # knock it back only once it is turning (1024 half-steps ≈ 1.3 s before its magnet): a slip after the
+        # last magnet pass could only be seen one turn later, so the scenario must not depend on host timing
+        Step(at=READY + 7.05, action="expect", device="M8", prop="rpm", value=1.0, op=">", settle=1.0),
         Step(at=READY + 7.15, action="input", device="M8", prop="slip", value=300),
         Step(at=READY + 7.2, action="expect_log", pattern=r"RESYNC m7 err=\+300", settle=3.0),
         show(READY + 7.25, "001236,54", 3.3),

@@ -63,6 +63,70 @@ def test_trapezoid_profile_starts_slow_cruises_and_stops_exactly():
     assert m.capacity == pytest.approx(850 / 204.8)
 
 
+def test_a_delayed_coil_write_reanchors_the_next_step(rig):
+    """The coil word left 3 ms late (bus lock / scheduler): the step happened at the write, so the next one
+    is a (slower) period after the write — never right behind it (pairs of such steps made rotors slip)."""
+    m, clock, logs, t = homed(rig)
+    m.set_desired(7, 9)
+    t = run_until(m, lambda: m.modules[7].v >= 850, t0=t)
+    mod = m.modules[7]
+    t = mod.next_t
+    write = m.bus.write
+
+    def slow_write(word):
+        write(word)
+        clock.t += 0.003                                            # the write blocked for 3 ms
+
+    m.bus = type("Bus", (), {"write": staticmethod(slow_write)})()
+    clock.t = t
+    m.tick(t)
+    done = t + 0.003
+    assert mod.v == pytest.approx(850 - 8 * 3000 * 0.003)           # it slowed down (rotor waited at the field)
+    assert mod.next_t == pytest.approx(done + 1 / mod.v)            # a full period after the write
+    m.bus = type("Bus", (), {"write": staticmethod(write)})()
+    run_until(m, m.settled, t0=clock.t)
+    assert digits_on(rig)[7] == 9
+
+
+def test_real_time_loop_cruises_at_max_pps_despite_overhead(rig):
+    """Run the real stepping thread (real clock): each coil write costs 0.25 ms (SPI + jitter). The
+    wake-up grid is absolute, so overshoot and run time do not add up per step — the module cruises at
+    ≈ max_pps (it used to settle near 1 / (tick + overhead) ≈ 80 %), and nothing is lost."""
+    import threading
+    import time as _time
+
+    m, clock, logs, t = homed(rig)
+    write = rig.write
+
+    def slow_write(word):
+        write(word)
+        end = _time.perf_counter() + 0.00025
+        while _time.perf_counter() < end:
+            pass
+
+    m.bus = type("Bus", (), {"write": staticmethod(slow_write)})()
+    m.clock = _time.monotonic
+    for mod in m.modules:
+        mod.next_t, mod.v, mod.idle_since = None, 0.0, _time.monotonic()
+    with m.lock:
+        m.modules[0].goal = 60                                      # six turns: a long cruise
+    stop = threading.Event()
+    th = threading.Thread(target=m.run, args=(stop,), daemon=True)
+    th.start()
+    try:
+        _time.sleep(0.3)                                            # ramp done (≈ 0.1 s)
+        rates = []
+        for _ in range(5):                                          # 5 windows: a host hiccup re-ramps one
+            s0, t0 = m.modules[0].steps, _time.monotonic()
+            _time.sleep(0.3)
+            rates.append((m.modules[0].steps - s0) / (_time.monotonic() - t0))
+    finally:
+        stop.set()
+        th.join(2)
+    assert max(rates) > 0.93 * 850, rates
+    assert max(rates) < 1.03 * 850, rates                           # never faster than the top speed
+
+
 # -- moves ------------------------------------------------------------------------------------------------
 def test_homing_from_anywhere_shows_zero(rig):
     m, *_ = homed(rig)

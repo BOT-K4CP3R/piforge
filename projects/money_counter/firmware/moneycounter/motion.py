@@ -19,7 +19,8 @@ due and writes **one** 32-bit coil word. The loop wakes at most once per tick (`
 modules due within half a tick share that word. Deadlines are absolute, so ordinary jitter does not
 accumulate and catching up is limited to one step per tick (never faster than ``max_pps``). A step
 more than a whole period late re-starts the schedule from a lower speed (the rotor slowed meanwhile)
-and the module accelerates again — host hiccups cost time, not steps.
+and the module accelerates again — host hiccups cost time, not steps. Likewise a coil word that leaves
+late (the write itself waited) counts from the moment it left, so no step follows right behind it.
 
 **Closed loop.** Power-up homing turns slowly (``start_pps``) to the Hall edge; that edge is
 position ``-offset``. With ``selftest`` each module then turns once at its top speed and is checked
@@ -445,6 +446,7 @@ class Motion:
         """One pass of the timing loop: read the Hall sensors, step every module that is due, write
         the coil word. Returns the time of the next deadline (None when nothing is moving)."""
         nxt: float | None = None
+        stepped: list[ModuleState] = []
         with self.lock:
             for m in self.modules:
                 level = int(self.halls.read(m.hall_pin))
@@ -458,7 +460,10 @@ class Motion:
                 self._check_overdue(m)
                 if self._wants_to_move(m, now):
                     if m.next_t is None or m.next_t <= now + 0.5 * self.tick_s:   # due within half a tick
+                        before = m.steps
                         self._advance(m, now)
+                        if m.steps != before:
+                            stepped.append(m)
                     m.idle_since = now
                     if m.next_t is not None:
                         nxt = m.next_t if nxt is None else min(nxt, m.next_t)
@@ -481,6 +486,25 @@ class Motion:
                 self.bus.write(word)
                 self._word = word
                 self.words += 1
+                if stepped:
+                    nxt = self._sent_late(stepped, now, nxt)
+        return nxt
+
+    def _sent_late(self, stepped: list[ModuleState], now: float, nxt: float | None) -> float | None:
+        """The coil word left ``delay`` after ``now`` (bus lock, scheduler): those steps happened at the
+        write, not at ``now``. Their next deadline counts from the write, at a lower speed (the rotor waited
+        at the field meanwhile) — otherwise the next word would follow almost at once and the rotor,
+        a few such pairs later, would slip."""
+        done = self.clock()
+        delay = done - now
+        if delay <= 0.5 * self.tick_s:
+            return nxt
+        for m in stepped:
+            if m.next_t is None or m.v <= 0:
+                continue
+            v = self.v0 if delay > REST_PERIODS / m.v else max(self.v0, m.v - LATE_DECEL * self.accel * delay)
+            m.v, m.next_t = v, max(m.next_t, done + 1.0 / v)
+            nxt = m.next_t if nxt is None else min(nxt, m.next_t)
         return nxt
 
     def release(self) -> None:
@@ -495,15 +519,26 @@ class Motion:
     def run(self, stop: threading.Event) -> None:
         """Stepping loop (own thread): wake at the earliest step deadline (rounded to the nearest tick,
         never twice within one tick), tick, repeat. Late wake-ups slow the modules down; they never
-        produce a burst of steps."""
+        produce a burst of steps.
+
+        The one-wake-per-tick floor is kept on an absolute grid (the previous wake *target* + one tick,
+        not the actual, slightly late wake-up + one tick): otherwise every sleep overshoot and the
+        tick's own run time would be added to each step and the modules would cruise well below
+        ``max_pps`` (≈ 80 % of it measured in the twin). A wake-up more than half a tick behind the grid
+        re-anchors it (no burst of make-up ticks)."""
+        grid: float | None = None
         while not stop.is_set():
             now = self.clock()
             nxt = self.tick(now)
             if nxt is None:                         # idle: wait for a command (or poll at 50 Hz)
+                grid = None
                 self._wake.wait(0.02)
                 self._wake.clear()
                 continue
-            wake = max(nxt - 0.5 * self.tick_s, now + self.tick_s)
+            after = self.clock()                    # the coil word has gone out (it may have waited)
+            floor = after + self.tick_s if grid is None else max(grid + self.tick_s, after + 0.5 * self.tick_s)
+            wake = max(nxt - 0.5 * self.tick_s, floor)
+            grid = wake
             while True:
                 left = wake - self.clock()
                 if left <= 0 or stop.is_set() or self._wake.is_set():
